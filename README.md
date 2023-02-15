@@ -75,3 +75,7 @@ Welcome to Quizmaster, an online quiz that allows the user to select from severa
 * I expect feedback on performance.
 * I expect the scoring system to work as intended, adding scores appropriately whenever the correct option is picked
 * I expect screen size not to affect the quality of my experience.
+
+## Design Choices
+
+
