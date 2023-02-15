@@ -78,4 +78,16 @@ Welcome to Quizmaster, an online quiz that allows the user to select from severa
 
 ## Design Choices
 
+### Fonts
 
+I have decided to go with Google Fonts to help me choose a suitable font style for my project, as it contains a wide variety of different fonts to choose from. As opposed to my first project, I have decided to go with one particular font, as it contains less textual content and does not require two different font styles.
+
+
+### Colours
+
+The colour scheme that I have decided to go with for my second javascript project 
+
+
+### Structure
+
+The structure of my quiz site will be very simple and straightforward. There will be a landing page which 
