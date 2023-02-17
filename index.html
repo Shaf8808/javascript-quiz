@@ -13,11 +13,18 @@
     <div class="container">
         <h1>Quizmaster</h1>
         <div id="question-container" class="hide">
-            <div class="controls">
-                <a class="btn" href="/game.html">Play</a>
-                <a class="btn" href="/highscores.html">High Scores</a>
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
             </div>
         </div>
+            <div class="controls">
+                <button id="start-btn" class="start btn btn">Play</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+            </div>
     </div>
 
     <script src="assets/js/script.js"></script>
