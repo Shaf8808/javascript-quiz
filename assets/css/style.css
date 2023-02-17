@@ -87,10 +87,13 @@ h3 {
     background-color: rgba(220, 96, 19, 0.997);;
 }  
 
-.btn[disabled]:hover {
-    cursor: not-allowed;
+.btn.correct {
+    background-color: #d20f0f;
     box-shadow: none;
-    transform: none;
 }
-  
+
+.btn.wrong {
+    background-color: #1b841b;
+    box-shadow: none;
+}
 
