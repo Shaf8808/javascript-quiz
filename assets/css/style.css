@@ -97,3 +97,8 @@ h3 {
     box-shadow: none;
 }
 
+.start-btn, .next-btn {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
