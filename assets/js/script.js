@@ -66,7 +66,7 @@ function selectAnswer(e) {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
     }
-    nextButton.classList.remove('hide')
+    
 }
 
 function setStatus(element, correct) {
@@ -90,5 +90,27 @@ const questions = [
             {text: '4', correct:true},
             {text: '22', correct:false}
         ]
+    },
+    {
+        question: 'What is 2 + 2',
+        answers: [
+            {text: '4', correct:true},
+            {text: '22', correct:false}
+        ]
+    },
+    {
+        question: 'What is 2 + 2',
+        answers: [
+            {text: '4', correct:true},
+            {text: '22', correct:false}
+        ]
+    },
+    {
+        question: 'What is 2 + 2',
+        answers: [
+            {text: '4', correct:true},
+            {text: '22', correct:false}
+        ]
     }
+
 ]
