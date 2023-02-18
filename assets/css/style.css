@@ -94,18 +94,19 @@ h3 {
 }  
 
 .btn.correct {
-    background-color: #d20f0f;
+    background-color:#1b841b;
     box-shadow: none;
 }
 
 .btn.wrong {
-    background-color: #1b841b;
+    background-color: #d20f0f;
     box-shadow: none;
 }
 
 .start-btn, .next-btn {
     font-size: 3rem;
     font-weight: bold;
+    margin: 5px;
 }
 
 .controls {
@@ -118,3 +119,7 @@ h3 {
     display: none;
 }
 
+@media only screen and (max-width: 600px) {
+    #question {
+        margin-left: 4rem;
+    } }
