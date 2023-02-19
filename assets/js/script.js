@@ -6,18 +6,15 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const homeButton = document.getElementById('home-btn')
 
-
-homeButton.onclick = function () {
-    location.href = "index.html";
-};
-
-
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
+})
+homeButton.addEventListener('click', function () {
+    location.href = "index.html"
 })
 
 
