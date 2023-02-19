@@ -103,7 +103,7 @@ h3 {
     box-shadow: none;
 }
 
-.start-btn, .next-btn {
+.start-btn, .next-btn, .home-btn {
     font-size: 3rem;
     font-weight: bold;
     margin: 5px;

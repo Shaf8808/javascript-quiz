@@ -5,6 +5,10 @@ const questionContainer = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
+const homeButton = document.getElementById('home-btn')
+
+
+
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
@@ -13,9 +17,25 @@ nextButton.addEventListener('click', () => {
     setNextQuestion()
 })
 
+
+homeButton.addEventListener('click', refresh)
+
+
+function refresh () {
+    if (startGame.true) {
+        homeButton = window.location.reload()
+        homeButton.classList.remove('hide')
+    }
+}
+
+
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
+
+    homeButton.classList.remove('hide')
+
+
     shuffledQuestions = questions.sort(() => Math.random( - .5))
     currentQuestionIndex = 0
     title.classList.add('hide')
@@ -92,21 +112,21 @@ const questions = [
         ]
     },
     {
-        question: 'What is 2 + 2',
+        question: 'What is 2 + 5',
         answers: [
             {text: '4', correct:true},
             {text: '22', correct:false}
         ]
     },
     {
-        question: 'What is 2 + 2',
+        question: 'What is 2 + 10',
         answers: [
             {text: '4', correct:true},
             {text: '22', correct:false}
         ]
     },
     {
-        question: 'What is 2 + 2',
+        question: 'What is 2 + 1234',
         answers: [
             {text: '4', correct:true},
             {text: '22', correct:false}
