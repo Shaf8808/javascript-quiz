@@ -4,14 +4,12 @@ const title = document.getElementById('heading')
 const questionContainer = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-
 const homeButton = document.getElementById('home-btn')
 
 
 homeButton.onclick = function () {
-    location.href = "www.yoursite.com";
+    location.href = "index.html";
 };
-
 
 
 let shuffledQuestions, currentQuestionIndex
@@ -26,10 +24,7 @@ nextButton.addEventListener('click', () => {
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
-
     homeButton.classList.remove('hide')
-
-
     shuffledQuestions = questions.sort(() => Math.random( - .5))
     currentQuestionIndex = 0
     title.classList.add('hide')
