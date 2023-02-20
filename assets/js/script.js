@@ -11,7 +11,28 @@ const homeButton = document.getElementById('home-btn')
 const welcomeMessageRef = document.getElementById('welcome-message')
 const welcomeSection = document.getElementById('welcome')
 
-welcomeSection.addEventListener('submit', handleUserFormSubmit)
+// User form section
+
+const userSectionRef = document.getElementById('user');
+const userFormRef = document.getElementById('user-form');
+const userNameRef = document.getElementById('user-name');
+
+const userFormOpen = () => {
+    welcomeMessageRef.innerHTML = '';
+    userNameRef.value = '';
+    userNameRef.focus();
+}
+
+const handleUserFormSubmit = event => {
+    event.preventDefault();
+    welcomeSection.classList.remove('hide')
+    welcomeMessageRef.innerHTML = `Hi ${userNameRef.value}!`;   
+    startButton.classList.remove('hide')
+}
+
+
+// User form submit
+userFormRef.addEventListener('submit', handleUserFormSubmit);
 
 // Questions section
 
@@ -27,36 +48,6 @@ nextButton.addEventListener('click', () => {
 homeButton.addEventListener('click', function () {
     location.href = "index.html"
 })
-
-// User form section
-
-const userSectionRef = document.getElementById('#user');
-const userFormRef = document.getElementById('#user-form');
-const userNameRef = document.getElementById('#user-name');
-
-
-const userFormOpen = () => {
-    welcomeMessageRef.innerHTML = '';
-    userNameRef.value = '';
-    userNameRef.focus();
-}
-
-/**
- * Logs the name of the user from user-form and then closes the user-form, 
- * displays start button
- */
-const handleUserFormSubmit = event => {
-    event.preventDefault();
-    welcomeSection.classList.remove('hide')
-    welcomeMessageRef.innerHTML = `Hi ${userNameRef.value}!`;   
-    startButton.classList.remove('hide')
-}
-
-// User form submit
-
-userFormRef.addEventListener('submit', handleUserFormSubmit);
-
-
 
 
 function startGame() {
