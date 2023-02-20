@@ -24,9 +24,10 @@ const userFormOpen = () => {
 }
 
 const handleUserFormSubmit = event => {
+    userSectionRef.classList.add('hide')
     event.preventDefault();
     welcomeSection.classList.remove('hide')
-    welcomeMessageRef.innerHTML = `Hi ${userNameRef.value}!`;   
+    welcomeMessageRef.innerHTML = `Welcome ${userNameRef.value}!`;   
     startButton.classList.remove('hide')
 }
 
