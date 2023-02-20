@@ -13,7 +13,11 @@ const welcomeSection = document.getElementById('welcome')
 
 welcomeSection.addEventListener('submit', handleUserFormSubmit)
 
+// Questions section
+
 let shuffledQuestions, currentQuestionIndex
+
+// Controls buttons section
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
