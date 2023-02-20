@@ -69,6 +69,18 @@ h3 {
     margin: 30px 0;
 }
 
+/* User form section */
+
+#user-name {
+    color: #0b0b0b;
+    padding-left: 5px;
+}
+
+label {
+    font-size:1.5rem;
+    padding-right: 5px;
+}
+
 
 /* Button styling */
 

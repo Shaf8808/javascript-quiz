@@ -17,9 +17,16 @@ homeButton.addEventListener('click', function () {
     location.href = "index.html"
 })
 
+// User form section
+
+const userSectionRef = document.querySelector('#user');
+const userFormRef = document.querySelector('#user-form');
+const userNameRef = document.querySelector('#user-name');
+
 
 function startGame() {
     console.log('Started')
+    userSectionRef.classList.add('hide')
     startButton.classList.add('hide')
     homeButton.classList.remove('hide')
     shuffledQuestions = questions.sort(() => Math.random( - .5))
