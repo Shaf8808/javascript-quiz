@@ -6,6 +6,13 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const homeButton = document.getElementById('home-btn')
 
+// Welcome section
+
+const welcomeMessageRef = document.getElementById('welcome-message')
+const welcomeSection = document.getElementById('welcome')
+
+welcomeSection.addEventListener('submit', handleUserFormSubmit)
+
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
@@ -19,14 +26,37 @@ homeButton.addEventListener('click', function () {
 
 // User form section
 
-const userSectionRef = document.querySelector('#user');
-const userFormRef = document.querySelector('#user-form');
-const userNameRef = document.querySelector('#user-name');
+const userSectionRef = document.getElementById('#user');
+const userFormRef = document.getElementById('#user-form');
+const userNameRef = document.getElementById('#user-name');
+
+
+const userFormOpen = () => {
+    welcomeMessageRef.innerHTML = '';
+    userNameRef.value = '';
+    userNameRef.focus();
+}
+
+/**
+ * Logs the name of the user from user-form and then closes the user-form, 
+ * displays start button
+ */
+const handleUserFormSubmit = event => {
+    event.preventDefault();
+    welcomeSection.classList.remove('hide')
+    welcomeMessageRef.innerHTML = `Hi ${userNameRef.value}!`;   
+    startButton.classList.remove('hide')
+}
+
+// User form submit
+
+userFormRef.addEventListener('submit', handleUserFormSubmit);
+
+
 
 
 function startGame() {
     console.log('Started')
-    userSectionRef.classList.add('hide')
     startButton.classList.add('hide')
     homeButton.classList.remove('hide')
     shuffledQuestions = questions.sort(() => Math.random( - .5))

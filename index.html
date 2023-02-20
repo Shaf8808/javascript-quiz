@@ -17,12 +17,21 @@
     <!-- User form section  -->
 
     <section id="user">
-        <form id="user-form" autocomplete="off">
+        <form id="user-form">
             <label for="user-name">Enter your name:</label>
             <input type="text" name="user-name" id="user-name" required>
+            <button id="user-submit">
+            </button>
         </form>
     </section>
-    
+
+    <section class="hide" id="welcome">
+        <!-- Welcome note to the user, name inserted to <p> in script.js handleUserFormSubmit()-->
+        <div id="welcome-person">
+            <p id="welcome-message"></p>
+            <button id="start-btn" class="start-btn btn hide">Play</button>
+        </div>
+    </section>
 
 
     <!-- All of my answer buttons along with their appropriately styled and scripted container -->
@@ -37,7 +46,6 @@
         </div>
     <!-- The "controls" section of my quiz app, with the buttons for play which starts the quiz, the next button which displays the next question and the home button which directs the user to the landing page -->
             <div class="controls">
-                <button id="start-btn" class="start-btn btn">Play</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
                 <button id="home-btn" class="home-btn btn hide">Home</button>
             </div>
