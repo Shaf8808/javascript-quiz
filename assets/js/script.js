@@ -32,19 +32,20 @@ const handleUserFormSubmit = event => {
 }
 
 // Score system
-
 const scoreText = document.getElementById('score')
 let score = 0
+const headsUpDisplay = document.getElementById('hud')
+
+// Score bonus
+const correctScore = 5
 
 // User form submit
 userFormRef.addEventListener('submit', handleUserFormSubmit);
 
 // Questions section
-
 let shuffledQuestions, currentQuestionIndex
 
 // Controls buttons section
-
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
@@ -59,6 +60,7 @@ homeButton.addEventListener('click', function () {
 
 function startGame() {
     console.log('Started')
+    headsUpDisplay.classList.remove('hide')
     startButton.classList.add('hide')
     homeButton.classList.remove('hide')
     welcomeMessageRef.classList.add('hide')
@@ -93,6 +95,8 @@ function showQuestion(question) {
     })
 }
 
+// Function to reset questions
+
 function resetQuestions() {
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
@@ -101,7 +105,7 @@ function resetQuestions() {
     }
 }
 
-/* The functions that runs once the user completes the quiz */
+/* The functions that runs once the user completes the quiz and incrementing score */
 
 
 function selectAnswer(e) {
@@ -110,15 +114,27 @@ function selectAnswer(e) {
     setStatus(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatus(button, button.dataset.correct)
-    })
+    })  
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
-        startButton.innerText = 'Restart'
+        startButton.innerText = 'Try again'
         startButton.classList.remove('hide')
+    }
+    if (correct) {
+        incrementScore(correctScore)
     }
     
 }
+
+// Function for scoring system 
+
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+}
+
+
 
 /* The functions for adding the correct and wrong classes based on the user's input */ 
 
@@ -135,13 +151,6 @@ function setStatus(element, correct) {
 function clearStatus(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
-}
-
-// Function for scoring system 
-
-incrementScore = num => {
-    score += num;
-    scoreText.innerText = score;
 }
 
 
