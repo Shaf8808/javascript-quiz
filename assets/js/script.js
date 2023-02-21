@@ -31,7 +31,6 @@ const handleUserFormSubmit = event => {
     startButton.classList.remove('hide')
 }
 
-
 // User form submit
 userFormRef.addEventListener('submit', handleUserFormSubmit);
 
@@ -73,6 +72,8 @@ function setNextQuestion() {
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+// The function that creates button elements for each answer
+
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
@@ -81,11 +82,14 @@ function showQuestion(question) {
         button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
+            incrementScore(CORRECT_BONUS);
         }
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
     })
 }
+
+// Function for scoring system 
 
 function resetQuestions() {
     nextButton.classList.add('hide')
@@ -95,7 +99,7 @@ function resetQuestions() {
     }
 }
 
-/* The functions that run once the user selects an answer, which changes to the appropriate colour depending on their answer */ 
+/* The functions that runs once the user completes the quiz */
 
 
 function selectAnswer(e) {
@@ -113,6 +117,9 @@ function selectAnswer(e) {
     }
     
 }
+
+/* The functions for adding the correct and wrong classes based on the user's input */ 
+
 
 function setStatus(element, correct) {
     clearStatus(element)
