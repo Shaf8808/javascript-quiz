@@ -98,7 +98,7 @@ label {
 #user-submit:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(220, 96, 19, 0.997);
-    transform: translateY(-0.3rem);
+    transform: translateY(-0.2rem);
     transition: transform 150ms;
     background-color: rgba(220, 96, 19, 0.997);;
 }
