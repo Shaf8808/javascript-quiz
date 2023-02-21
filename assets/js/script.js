@@ -24,8 +24,8 @@ const userFormOpen = () => {
 }
 
 const handleUserFormSubmit = event => {
-    userSectionRef.classList.add('hide')
     event.preventDefault();
+    userSectionRef.classList.add('hide')
     welcomeSection.classList.remove('hide')
     welcomeMessageRef.innerHTML = `Welcome ${userNameRef.value}!`;   
     startButton.classList.remove('hide')
@@ -51,6 +51,8 @@ homeButton.addEventListener('click', function () {
 })
 
 
+// The function that runs once the user selects the play button after entering their name
+
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
@@ -63,6 +65,7 @@ function startGame() {
 
 }
 
+// The functions that run once the user selects the next button which appears AFTER they choose their answer
 
 function setNextQuestion() {
     resetQuestions()
@@ -90,6 +93,8 @@ function resetQuestions() {
         (answerButtonsElement.firstChild)
     }
 }
+
+/* The functions that run once the user selects an answer, which changes to the appropriate colour depending on their answer */ 
 
 
 function selectAnswer(e) {
@@ -121,6 +126,8 @@ function clearStatus(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
+// The questions for my quiz app
 
 const questions = [
     {

@@ -83,6 +83,13 @@ label {
     font-size:1.5rem;
 }
 
+/* Welcome message styling */
+
+#welcome-message {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
 
 /* Button styling */
 
