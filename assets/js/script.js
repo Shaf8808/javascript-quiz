@@ -31,6 +31,11 @@ const handleUserFormSubmit = event => {
     startButton.classList.remove('hide')
 }
 
+// Score system
+
+const scoreText = document.getElementById('score')
+let score = 0
+
 // User form submit
 userFormRef.addEventListener('submit', handleUserFormSubmit);
 
@@ -82,14 +87,11 @@ function showQuestion(question) {
         button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
-            incrementScore(CORRECT_BONUS);
         }
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
     })
 }
-
-// Function for scoring system 
 
 function resetQuestions() {
     nextButton.classList.add('hide')
@@ -134,6 +136,14 @@ function clearStatus(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
+// Function for scoring system 
+
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+}
+
 
 // The questions for my quiz app
 
