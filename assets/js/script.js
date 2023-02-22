@@ -27,7 +27,7 @@ const handleUserFormSubmit = event => {
     event.preventDefault();
     userSectionRef.classList.add('hide')
     welcomeSection.classList.remove('hide')
-    welcomeMessageRef.innerHTML = `Are you ready ${userNameRef.value}?`;   
+    welcomeMessageRef.innerHTML = `Are you ready ${userNameRef.value}?`;
     startButton.classList.remove('hide')
 }
 
@@ -64,7 +64,7 @@ function startGame() {
     startButton.classList.add('hide')
     homeButton.classList.remove('hide')
     welcomeMessageRef.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random( - .5))
+    shuffledQuestions = questions.sort(() => Math.random(-.5))
     currentQuestionIndex = 0
     title.classList.add('hide')
     questionContainer.classList.remove('hide')
@@ -100,8 +100,7 @@ function showQuestion(question) {
 function resetQuestions() {
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild
-        (answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 }
 
@@ -114,7 +113,7 @@ function selectAnswer(e) {
     setStatus(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatus(button, button.dataset.correct)
-    })  
+    })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
@@ -124,7 +123,7 @@ function selectAnswer(e) {
     if (correct) {
         incrementScore(correctScore)
     }
-    
+
 }
 
 // Function for scoring system 
@@ -136,7 +135,7 @@ incrementScore = num => {
 
 
 
-/* The functions for adding the correct and wrong classes based on the user's input */ 
+/* The functions for adding the correct and wrong classes based on the user's input */
 
 
 function setStatus(element, correct) {
@@ -156,33 +155,52 @@ function clearStatus(element) {
 
 // The questions for my quiz app
 
-const questions = [
-    {
+const questions = [{
         question: 'What is 2 + 2',
-        answers: [
-            {text: '4', correct:true},
-            {text: '22', correct:false}
+        answers: [{
+                text: '4',
+                correct: true
+            },
+            {
+                text: '22',
+                correct: false
+            }
         ]
     },
     {
         question: 'What is 2 + 5',
-        answers: [
-            {text: '4', correct:true},
-            {text: '22', correct:false}
+        answers: [{
+                text: '4',
+                correct: true
+            },
+            {
+                text: '22',
+                correct: false
+            }
         ]
     },
     {
         question: 'What is 2 + 10',
-        answers: [
-            {text: '4', correct:true},
-            {text: '22', correct:false}
+        answers: [{
+                text: '4',
+                correct: true
+            },
+            {
+                text: '22',
+                correct: false
+            }
         ]
     },
     {
         question: 'What is 2 + 1234',
-        answers: [
-            {text: '4', correct:true},
-            {text: '22', correct:false}
+        answers: [{
+                text: '4',
+                correct: true
+            },
+            {
+                text: '22',
+                correct: false
+            }
         ]
     }
 
