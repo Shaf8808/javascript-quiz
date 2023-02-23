@@ -116,9 +116,6 @@ function selectAnswer(e) {
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
-    } else {
-        startButton.innerText = 'Try again'
-        startButton.classList.remove('hide')
     }
     if (correct) {
         incrementScore(correctScore)
