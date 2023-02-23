@@ -119,9 +119,10 @@ function selectAnswer(e) {
     }
     if (correct) {
         incrementScore(correctScore)
+        selectedButton.disabled = true
     }
-
 }
+
 
 // Function for scoring system 
 
